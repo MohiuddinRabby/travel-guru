@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Booking.css";
 import Auth from "../../assets/hooks/useAuth";
 import Login from "../Login/Login";
+import { useHistory } from "react-router-dom";
 const Booking = () => {
   const auth = Auth();
   const [showModal, setShowModal] = useState(false);
@@ -9,6 +10,21 @@ const Booking = () => {
   const handleShowModal = () => setShowModal(true);
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+  const [fromLocation, setFromLocation] = useState("");
+  const [location, setLocation] = useState("Cox's Bazar");
+  const [checkin, setCheckin] = useState("");
+  const [checkout, setCheckout] = useState("");
+  let hotelPage = useHistory();
+  const saveToLocal = () => {
+    const newInfo = {
+      from: fromLocation,
+      location: location,
+      chekin: checkin,
+      checkout: checkout,
+    };
+    localStorage.setItem("info", JSON.stringify(newInfo));
+    hotelPage.push("/hotelInfo");
   };
   return (
     <div id="booking-section">
@@ -26,11 +42,15 @@ const Booking = () => {
                         type="text"
                         className="form-control"
                         placeholder="Dhaka"
+                        onChange={(e) => setFromLocation(e.target.value)}
                       />
                     </div>
                     <div className="form-group">
                       <label>Destination</label>
-                      <select className="form-control">
+                      <select
+                        className="form-control"
+                        onChange={(e) => setLocation(e.target.value)}
+                      >
                         <option value="coxsbazar">Cox's Bazar</option>
                         <option value="sreemangal">Sreemangal</option>
                         <option value="sundarban">Sundarban</option>
@@ -42,7 +62,8 @@ const Booking = () => {
                           <label>Check-in</label>
                           <input
                             type="date"
-                            name="date"
+                            value={checkin}
+                            onChange={(e) => setCheckin(e.target.value)}
                             className="form-control"
                           />
                         </div>
@@ -50,7 +71,8 @@ const Booking = () => {
                           <label>Check-out</label>
                           <input
                             type="date"
-                            name="date"
+                            value={checkout}
+                            onChange={(e) => setCheckout(e.target.value)}
                             className="form-control"
                           />
                         </div>
@@ -58,6 +80,7 @@ const Booking = () => {
                     </div>
                     {auth.singInUser ? (
                       <button
+                        onClick={saveToLocal}
                         type="submit"
                         className="btn btn-warning btn-block btn-sm"
                       >
