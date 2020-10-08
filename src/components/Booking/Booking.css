@@ -1,15 +1,13 @@
-.place-card {
-  cursor: pointer;
-}
-#home {
-  background: url("../../assets/img/bg1.jpg");
+#booking-section {
+  background: url("../../assets/img/bg2.jpg");
   min-height: 568px;
   background-size: cover;
 }
-#home .dark-overlay {
+#booking-section .booking-darkOverlay {
   top: 0;
   left: 0;
   width: 100%;
   min-height: 568px;
   background-color: rgba(0, 0, 0, 0.6);
 }
+

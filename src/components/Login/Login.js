@@ -7,11 +7,11 @@ import { useHistory } from "react-router-dom";
 const Login = (props) => {
   let history = useHistory();
   const auth = Auth();
-  console.log(auth);
+  // console.log(auth);
   const handleSingIn = () => {
     auth.singInWithGoole().then((res) => {
       //to go the url where it came from with :slug
-      history.push("/");
+      // history.goBack();
       props.handleClose();
     });
   };

@@ -11,9 +11,6 @@ const Slider = () => {
   const [destination, setDestination] = useState(data);
   const [card, setCard] = useState("Cox's Bazar");
   const selectCard = destination.filter((place) => place.name === card);
-  const handleBooking = () => {
-    console.log("place", selectCard);
-  };
   return (
     <div id="home">
       <div className="dark-overlay">
@@ -21,7 +18,10 @@ const Slider = () => {
           <div className="row">
             <div className="col-md-3">
               {selectCard.map((des) => (
-                <Description key={des.id} description={des}></Description>
+                <Description
+                  key={des.id}
+                  description={des}
+                ></Description>
               ))}
             </div>
             <div className="col-md-3 place-card">
@@ -32,12 +32,6 @@ const Slider = () => {
                 >
                   <img src={img1} alt="" className="img-fluid" />
                 </div>
-                <button
-                  className="btn btn-warning btn-sm"
-                  onClick={handleBooking}
-                >
-                  Book Destination
-                </button>
               </div>
             </div>
             <div className="col-md-3 place-card">
@@ -45,12 +39,6 @@ const Slider = () => {
                 <div className="card-img" onClick={() => setCard("Sreemangal")}>
                   <img src={img2} alt="" className="img-fluid" />
                 </div>
-                <button
-                  className="btn btn-warning btn-sm"
-                  onClick={handleBooking}
-                >
-                  Book Destination
-                </button>
               </div>
             </div>
             <div className="col-md-3 place-card">
@@ -58,12 +46,6 @@ const Slider = () => {
                 <div className="card-img" onClick={() => setCard("Sundarban")}>
                   <img src={img3} alt="" className="img-fluid" />
                 </div>
-                <button
-                  className="btn btn-warning btn-sm"
-                  onClick={handleBooking}
-                >
-                  Book Destination
-                </button>
               </div>
             </div>
           </div>
