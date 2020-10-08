@@ -1,0 +1,15 @@
+.place-card {
+  cursor: pointer;
+}
+#home {
+  background: url("../../assets/img/bg.jpeg");
+  min-height: 568px;
+  background-size: cover;
+}
+#home .dark-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 568px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
