@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { AuthProvider } from "./assets/hooks/useAuth";
+import { AuthProvider, PrivateRoute } from "./assets/hooks/useAuth";
 import Booking from "./components/Booking/Booking";
 import Header from "./components/Header/Header";
 import HotelInfo from "./components/HotelInfo/HotelInfo";
@@ -8,6 +8,7 @@ import Coxsbazar from "./components/Map/Coxsbazar";
 import Sreemangal from "./components/Map/Sreemangal";
 import Sundarban from "./components/Map/Sundarban";
 import Slider from "./components/Slider/Slider";
+import UnauthorizedView from "./components/UnauthorizedView/UnauthorizedView";
 const App = () => {
   return (
     <Router>
@@ -20,17 +21,20 @@ const App = () => {
           <Route path="/booking">
             <Booking></Booking>
           </Route>
-          <Route path="/hotel/room/Info/coxsbazar">
+          <PrivateRoute path="/hotel/room/Info/coxsbazar">
             <Coxsbazar></Coxsbazar>
-          </Route>
-          <Route path="/hotel/room/Info/sundorban">
+          </PrivateRoute>
+          <PrivateRoute path="/hotel/room/Info/sundorban">
             <Sundarban></Sundarban>
-          </Route>
-          <Route path="/hotel/room/Info/sreemangal">
+          </PrivateRoute>
+          <PrivateRoute path="/hotel/room/Info/sreemangal">
             <Sreemangal></Sreemangal>
-          </Route>
-          <Route path="/hotelInfo">
+          </PrivateRoute>
+          <PrivateRoute path="/hotelInfo">
             <HotelInfo></HotelInfo>
+          </PrivateRoute>
+          <Route path="/unAuthorized/404">
+            <UnauthorizedView></UnauthorizedView>
           </Route>
         </Switch>
       </AuthProvider>

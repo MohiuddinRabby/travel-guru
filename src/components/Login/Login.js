@@ -3,9 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import googleIcon from "../../assets/img/google.svg";
 import facebookIcon from "../../assets/img/facebook.svg";
 import Auth from "../../assets/hooks/useAuth";
-import { useHistory } from "react-router-dom";
 const Login = (props) => {
-  let history = useHistory();
   const auth = Auth();
   // console.log(auth);
   const handleSingIn = () => {

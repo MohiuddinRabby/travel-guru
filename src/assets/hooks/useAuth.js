@@ -7,10 +7,7 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import {
   Route,
-  Link,
   Redirect,
-  useHistory,
-  useLocation,
 } from "react-router-dom";
 import firebaseConfig from "../../firebaseConfig";
 firebase.initializeApp(firebaseConfig);
@@ -41,7 +38,7 @@ export const PrivateRoute = ({ children, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: "/unAuthorized/404" ,
               state: { from: location },
             }}
           />
