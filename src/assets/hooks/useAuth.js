@@ -5,10 +5,7 @@ import { useState } from "react";
 import { createContext } from "react";
 import { useContext } from "react";
 import { useEffect } from "react";
-import {
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import firebaseConfig from "../../firebaseConfig";
 firebase.initializeApp(firebaseConfig);
 
@@ -38,7 +35,7 @@ export const PrivateRoute = ({ children, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/unAuthorized/404" ,
+              pathname: "/",
               state: { from: location },
             }}
           />
@@ -81,6 +78,7 @@ const Auth = () => {
       .signOut()
       .then(function () {
         setSingInUser(null);
+        window.location.reload();
       })
       .catch((error) => {
         return error;

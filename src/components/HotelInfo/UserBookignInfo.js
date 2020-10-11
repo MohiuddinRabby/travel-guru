@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const HotelInfo = () => {
+const UserBookignInfo = () => {
   const [info, setInfo] = useState({});
   useEffect(() => {
     const desInfo = JSON.parse(localStorage.getItem("info"));
@@ -10,9 +10,11 @@ const HotelInfo = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-danger">Hotel {info.from}</h1>
+      <h6 className="text-danger">
+        {info.location} - chekcIn {info.chekin} - checkOut {info.checkout}
+      </h6>
     </div>
   );
 };
 
-export default HotelInfo;
+export default UserBookignInfo;

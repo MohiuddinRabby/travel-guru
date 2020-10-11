@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { useAuth } from "../../assets/hooks/useAuth";
+import Login from "../Login/Login";
+import PopupExample from "../pop";
 import "./HotelInfo.css";
 const Rooms = (props) => {
   const { title, inImg, price, description } = props.rooms;
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+  const auth = useAuth();
   return (
     <div className="rooms-details">
       <div className="room-img">
@@ -16,8 +23,23 @@ const Rooms = (props) => {
           <div className="card-text">{title}</div>
           <div className="card-text">{description}</div>
           <div className="card-text">$ {price} / day</div>
+          {auth.singInUser ? (
+            <PopupExample></PopupExample>
+          ) : (
+            <button
+              className="btn btn-danger btn-block btn-sm"
+              onClick={handleShowModal}
+            >
+              Reserve
+            </button>
+          )}
         </div>
       </div>
+      {showModal ? (
+        <Login show={showModal} handleClose={handleCloseModal}></Login>
+      ) : (
+        false
+      )}
     </div>
   );
 };

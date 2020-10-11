@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./Booking.css";
-import Auth from "../../assets/hooks/useAuth";
-import Login from "../Login/Login";
 import { useHistory } from "react-router-dom";
 const Booking = () => {
-  const auth = Auth();
-  const [showModal, setShowModal] = useState(false);
-  const handleCloseModal = () => setShowModal(false);
-  const handleShowModal = () => setShowModal(true);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -85,32 +79,15 @@ const Booking = () => {
                         </div>
                       </div>
                     </div>
-                    {auth.singInUser ? (
-                      <button
-                        onClick={saveToLocal}
-                        type="submit"
-                        className="btn btn-warning btn-block btn-sm"
-                      >
-                        Confirm Booking
-                      </button>
-                    ) : (
-                      <button
-                        type="submit"
-                        className="btn btn-warning btn-block btn-sm"
-                        onClick={handleShowModal}
-                      >
-                        Login to Confirm Booking
-                      </button>
-                    )}
+
+                    <button
+                      onClick={saveToLocal}
+                      type="submit"
+                      className="btn btn-warning btn-block btn-sm"
+                    >
+                      Search
+                    </button>
                   </form>
-                  {showModal ? (
-                    <Login
-                      show={showModal}
-                      handleClose={handleCloseModal}
-                    ></Login>
-                  ) : (
-                    false
-                  )}
                 </div>
               </div>
             </div>

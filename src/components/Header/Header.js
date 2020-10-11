@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../assets/hooks/useAuth";
 import Login from "../Login/Login";
+import headerLogo from "../../assets/img/logo.svg";
 import "./Header.css";
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +13,11 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          Navbar
+          <img
+            src={headerLogo}
+            alt=""
+            style={{ width: "50px", height: "50px" }}
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -45,7 +50,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to="/" className="nav-link">
-                Contact
+                About
               </Link>
             </li>
           </ul>
