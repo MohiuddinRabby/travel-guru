@@ -12,7 +12,7 @@ const Booking = () => {
     e.preventDefault();
   };
   const [fromLocation, setFromLocation] = useState("");
-  const [location, setLocation] = useState("Cox's Bazar");
+  const [location, setLocation] = useState("coxsbazar");
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   let hotelPage = useHistory();
@@ -24,7 +24,13 @@ const Booking = () => {
       checkout: checkout,
     };
     localStorage.setItem("info", JSON.stringify(newInfo));
-    hotelPage.push("/hotel/room/Info");
+    if (location === "coxsbazar") {
+      hotelPage.push("/hotel/room/Info/coxsbazar");
+    } else if (location === "sundarban") {
+      hotelPage.push("/hotel/room/Info/sundorban");
+    } else {
+      hotelPage.push("/hotel/room/Info/sreemangal");
+    }
   };
   return (
     <div id="booking-section">
@@ -50,6 +56,7 @@ const Booking = () => {
                       <select
                         className="form-control"
                         onChange={(e) => setLocation(e.target.value)}
+                        value={location}
                       >
                         <option value="coxsbazar">Cox's Bazar</option>
                         <option value="sreemangal">Sreemangal</option>

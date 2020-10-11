@@ -9,7 +9,7 @@ const HotelInfo = () => {
     setInfo(desInfo);
   }, []);
   return (
-    <div className="container py-5">
+    <div>
       <h1 className="text-danger">Hotel {info.from}</h1>
     </div>
   );

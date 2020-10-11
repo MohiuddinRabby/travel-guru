@@ -3,13 +3,13 @@ import HotelRoom from "../HotelInfo/HotelRoom";
 import ReactMapGL, { Marker } from "react-map-gl";
 import key from "../../mapKey";
 import { Overlay, Tooltip } from "react-bootstrap";
-const Coxsbazar = () => {
-  //state to styling the map
+
+const Sreemangal = () => {
   const [mapStyle, setMapStyle] = useState({
     width: "100%",
     height: "80vh",
-    latitude: 21.4163,
-    longitude: 91.981062,
+    latitude: 24.306797,
+    longitude: 91.734827,
     zoom: 8,
   });
   const [show, setShow] = useState(false);
@@ -27,7 +27,7 @@ const Coxsbazar = () => {
             mapboxApiAccessToken={key}
           >
             {/* marker of cox's bazar*/}
-            <Marker latitude={21.4163} longitude={91.981062}>
+            <Marker latitude={24.306797} longitude={91.734827}>
               <i
                 className="fas fa-map-marker text-danger"
                 ref={target}
@@ -37,7 +37,7 @@ const Coxsbazar = () => {
             <Overlay target={target.current} show={show} placement="right">
               {(props) => (
                 <Tooltip id="overlay-example" {...props}>
-                  Coxsbazar
+                  Sreemangal
                 </Tooltip>
               )}
             </Overlay>
@@ -48,4 +48,4 @@ const Coxsbazar = () => {
   );
 };
 
-export default Coxsbazar;
+export default Sreemangal;
