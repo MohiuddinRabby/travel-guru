@@ -10,7 +10,7 @@ const HotelInfo = () => {
   }, []);
   return (
     <div className="container py-5">
-      <h1 className="text-danger">Hotel</h1>
+      <h1 className="text-danger">Hotel {info.from}</h1>
     </div>
   );
 };

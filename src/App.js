@@ -4,6 +4,7 @@ import { AuthProvider } from "./assets/hooks/useAuth";
 import Booking from "./components/Booking/Booking";
 import Header from "./components/Header/Header";
 import HotelInfo from "./components/HotelInfo/HotelInfo";
+import HotelRoom from "./components/HotelInfo/HotelRoom";
 import Slider from "./components/Slider/Slider";
 const App = () => {
   return (
@@ -11,6 +12,9 @@ const App = () => {
       <AuthProvider>
         <Header></Header>
         <Switch>
+        <Route path="/hotel/room/Info">
+            <HotelRoom></HotelRoom>
+          </Route>
           <Route exact path="/">
             <Slider></Slider>
           </Route>

@@ -24,7 +24,7 @@ const Booking = () => {
       checkout: checkout,
     };
     localStorage.setItem("info", JSON.stringify(newInfo));
-    hotelPage.push("/hotelInfo");
+    hotelPage.push("/hotel/room/Info");
   };
   return (
     <div id="booking-section">
