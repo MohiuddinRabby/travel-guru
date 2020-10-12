@@ -3,11 +3,19 @@ import { Button, Modal } from "react-bootstrap";
 import googleIcon from "../../assets/img/google.svg";
 import facebookIcon from "../../assets/img/facebook.svg";
 import Auth from "../../assets/hooks/useAuth";
+import "./Login.css";
 const Login = (props) => {
   const auth = Auth();
   // console.log(auth);
   const handleSingIn = () => {
     auth.singInWithGoole().then((res) => {
+      //to go the url where it came from with :slug
+      // history.goBack();
+      props.handleClose();
+    });
+  };
+  const handleSingInFacebook = () => {
+    auth.singInWithFacebook().then((res) => {
       //to go the url where it came from with :slug
       // history.goBack();
       props.handleClose();
@@ -23,7 +31,7 @@ const Login = (props) => {
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <button onClick={handleSingIn}>
+        <button onClick={handleSingIn} className="google btns">
           <img
             src={googleIcon}
             alt=""
@@ -31,7 +39,7 @@ const Login = (props) => {
           />
           Login with Google
         </button>
-        <button>
+        <button className="fb btns" onClick={handleSingInFacebook}>
           <img
             src={facebookIcon}
             alt=""

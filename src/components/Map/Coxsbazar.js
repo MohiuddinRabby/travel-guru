@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import HotelRoom from "../HotelInfo/HotelRoom";
 import ReactMapGL, { Marker } from "react-map-gl";
-import key from "../../mapKey";
 import { Overlay, Tooltip } from "react-bootstrap";
+import Key from "../../Key";
 const Coxsbazar = () => {
   //state to styling the map
-  const [mapStyle, setMapStyle] = useState({
+  const [viewPort, setviewPort] = useState({
     width: "100%",
     height: "80vh",
     latitude: 21.4163,
@@ -22,9 +22,10 @@ const Coxsbazar = () => {
         </div>
         <div className="col-md-4 py-5">
           <ReactMapGL
-            {...mapStyle}
-            onViewportChange={(nextViewport) => setMapStyle(nextViewport)}
-            mapboxApiAccessToken={key}
+            {...viewPort}
+            mapStyle="mapbox://styles/xosef/ckg64lg8x494319mpcumnscvh"
+            onViewportChange={(nextViewport) => setviewPort(nextViewport)}
+            mapboxApiAccessToken={Key}
           >
             {/* marker of cox's bazar*/}
             <Marker latitude={21.4163} longitude={91.981062}>

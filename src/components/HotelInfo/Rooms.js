@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../assets/hooks/useAuth";
 import Login from "../Login/Login";
-import PopupExample from "../pop";
+import ReserveConfirm from "../ReserveConfirm/ReserveConfirm";
 import "./HotelInfo.css";
 const Rooms = (props) => {
   const { title, inImg, price, description } = props.rooms;
@@ -24,7 +24,7 @@ const Rooms = (props) => {
           <div className="card-text">{description}</div>
           <div className="card-text">$ {price} / day</div>
           {auth.singInUser ? (
-            <PopupExample></PopupExample>
+            <ReserveConfirm></ReserveConfirm>
           ) : (
             <button
               className="btn btn-danger btn-block btn-sm"

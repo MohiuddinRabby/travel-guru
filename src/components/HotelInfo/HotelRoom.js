@@ -18,8 +18,7 @@ const HotelRoom = () => {
   return (
     <div className="container py-5 text-danger">
       <h4>
-        {" "}
-        <UserBookignInfo></UserBookignInfo>{" "}
+        <UserBookignInfo></UserBookignInfo>
       </h4>
       {loading ? (
         <div className="py-5">
@@ -33,8 +32,8 @@ const HotelRoom = () => {
         </div>
       ) : (
         hotelRooms.map((room) => (
-          <div className="py-2">
-            <Rooms key={room.keys} rooms={room}></Rooms>
+          <div className="py-2" key={room.keys}>
+            <Rooms  rooms={room}></Rooms>
           </div>
         ))
       )}

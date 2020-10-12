@@ -84,6 +84,36 @@ const Auth = () => {
         return error;
       });
   };
+  //sign in with facebook
+  const singInWithFacebook = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        const signedInUserInfo = getUserInfo(result.user);
+        setSingInUser(signedInUserInfo);
+        // console.log(result);
+        return result.user;
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        setSingInUser(null);
+        // console.log(error);
+      });
+  };
+  const signOutFacebook = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(function () {
+        setSingInUser(null);
+        window.location.reload();
+      })
+      .catch((error) => {
+        return error;
+      });
+  };
   useEffect(() => {
     //to hold current sign in user data
     firebase.auth().onAuthStateChanged(function (user) {
@@ -99,6 +129,8 @@ const Auth = () => {
     singInUser,
     singInWithGoole,
     signOutGoogle,
+    singInWithFacebook,
+    signOutFacebook,
   };
 };
 export default Auth;

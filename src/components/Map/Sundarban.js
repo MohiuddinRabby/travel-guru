@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import HotelRoom from "../HotelInfo/HotelRoom";
 import ReactMapGL, { Marker } from "react-map-gl";
-import key from "../../mapKey";
 import { Overlay, Tooltip } from "react-bootstrap";
+import Key from "../../Key";
 
 const Sundarban = () => {
   const [mapStyle, setMapStyle] = useState({
@@ -24,7 +24,7 @@ const Sundarban = () => {
           <ReactMapGL
             {...mapStyle}
             onViewportChange={(nextViewport) => setMapStyle(nextViewport)}
-            mapboxApiAccessToken={key}
+            mapboxApiAccessToken={Key}
           >
             {/* marker of cox's bazar*/}
             <Marker latitude={22.492247} longitude={89.591059}>

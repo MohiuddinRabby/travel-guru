@@ -10,8 +10,8 @@
 
 # production
 /build
-src/firebaseConfig.js
-src/mapKey.js
+/src/firebaseConfig.js
+/src/Key.js
 # misc
 .DS_Store
 .env.local
