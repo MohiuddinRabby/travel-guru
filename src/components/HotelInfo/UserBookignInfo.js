@@ -10,7 +10,7 @@ const UserBookignInfo = () => {
   }, []);
   return (
     <div>
-      <h6 className="text-danger">
+      <h6 style={{ fontWeight: "bold", color: "#008080" }}>
         {info.location} - chekcIn {info.chekin} - checkOut {info.checkout}
       </h6>
     </div>

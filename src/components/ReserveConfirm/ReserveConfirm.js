@@ -6,20 +6,26 @@ import "./ReserveConfirm.css";
 const ReserveConfirm = () => {
   let afterSuccess = useHistory();
   const [successMsg, setSuccessMsg] = useState(false);
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
   const handleConfirm = () => {
     setSuccessMsg(true);
   };
   if (successMsg) {
     setTimeout(() => {
       afterSuccess.push("/");
-    }, 3000);
+    }, 2000);
   }
   return (
-    <Popup trigger={<button> Reserve</button>} position="center center">
+    <Popup
+      trigger={<button className="btn global buttons btn-sm"> Reserve</button>}
+      position="center center"
+    >
       {(close) => (
         <Container fluid="md">
           {successMsg && <p className="text-success">Booking Confirmed</p>}
-          <Form>
+          <form onSubmit={onSubmit}>
             <div className="form-group">
               <label className="text-info">Email address</label>
               <input
@@ -36,10 +42,13 @@ const ReserveConfirm = () => {
                 <option value="rocket">Rocket</option>
               </select>
             </div>
-            <button className="btn btn-info" onClick={handleConfirm}>
+            <button
+              className="btn global buttons btn-sm"
+              onClick={handleConfirm}
+            >
               Confirm
             </button>
-          </Form>
+          </form>
           <button className="close" onClick={close}>
             &times;
           </button>

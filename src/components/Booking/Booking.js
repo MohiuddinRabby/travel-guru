@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./Booking.css";
 import { useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
 const Booking = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const { handleSubmit, register, errors } = useForm();
   const [fromLocation, setFromLocation] = useState("");
   const [location, setLocation] = useState("coxsbazar");
   const [checkin, setCheckin] = useState("");
@@ -35,7 +34,7 @@ const Booking = () => {
             <div className="col-md-6 py-5">
               <div className="card bg-dark text-center card-form">
                 <div className="card-body">
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit(saveToLocal)}>
                     <div className="form-group">
                       <label>From</label>
                       <input
@@ -43,7 +42,14 @@ const Booking = () => {
                         className="form-control"
                         placeholder="Dhaka"
                         onChange={(e) => setFromLocation(e.target.value)}
+                        name="from"
+                        ref={register({
+                          required: "Required",
+                        })}
                       />
+                      <p className="text-danger">
+                        {errors.from && errors.from.message}
+                      </p>
                     </div>
                     <div className="form-group">
                       <label>Destination</label>
@@ -66,8 +72,16 @@ const Booking = () => {
                             value={checkin}
                             onChange={(e) => setCheckin(e.target.value)}
                             className="form-control"
+                            name="checkin"
+                            ref={register({
+                              required: "Required",
+                            })}
                           />
+                          <p className="text-danger">
+                            {errors.checkin && errors.checkin.message}
+                          </p>
                         </div>
+
                         <div className="col-md-6">
                           <label>Check-out</label>
                           <input
@@ -75,16 +89,18 @@ const Booking = () => {
                             value={checkout}
                             onChange={(e) => setCheckout(e.target.value)}
                             className="form-control"
+                            name="checkout"
+                            ref={register({
+                              required: "Required",
+                            })}
                           />
+                          <p className="text-danger">
+                            {errors.checkout && errors.checkout.message}
+                          </p>
                         </div>
                       </div>
                     </div>
-
-                    <button
-                      onClick={saveToLocal}
-                      type="submit"
-                      className="btn btn-warning btn-block btn-sm"
-                    >
+                    <button className="btn global buttons btn-block btn-sm">
                       Search
                     </button>
                   </form>

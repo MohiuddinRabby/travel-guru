@@ -10,7 +10,7 @@ const Description = (props) => {
   return (
     <div>
       <h5>{description}</h5>
-      <button className="btn btn-warning btn-sm" onClick={handleBookingPage}>
+      <button className="global buttons btn btn-sm" onClick={handleBookingPage}>
         BOOKING
       </button>
     </div>

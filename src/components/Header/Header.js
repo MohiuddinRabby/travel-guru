@@ -18,6 +18,7 @@ const Header = () => {
             alt=""
             style={{ width: "50px", height: "50px" }}
           />
+          Travel Guru
         </Link>
         <button
           className="navbar-toggler"
@@ -73,7 +74,7 @@ const Header = () => {
                 </div>
               ) : (
                 <button
-                  className="btn btn-warning btn-sm"
+                  className="btn global buttons btn-sm"
                   onClick={handleShowModal}
                 >
                   Login

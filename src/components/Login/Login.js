@@ -28,7 +28,7 @@ const Login = (props) => {
       className="text-primary text-center"
     >
       <Modal.Header>
-        <Modal.Title>Login</Modal.Title>
+        <Modal.Title style={{ color: " #3b5998" }}>Login</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <button onClick={handleSingIn} className="google btns">
