@@ -11,6 +11,8 @@ const ReserveConfirm = () => {
   };
   const handleConfirm = () => {
     setSuccessMsg(true);
+    //clear local storage
+    window.localStorage.clear();
   };
   if (successMsg) {
     setTimeout(() => {
