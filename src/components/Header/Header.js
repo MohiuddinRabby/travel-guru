@@ -33,24 +33,19 @@ const Header = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav m-auto">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/news" className="nav-link">
                 News
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Destination
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/blogs" className="nav-link">
                 Blog
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/about" className="nav-link">
                 About
               </Link>
             </li>
