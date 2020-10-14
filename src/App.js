@@ -9,6 +9,7 @@ import Coxsbazar from "./components/Map/Coxsbazar";
 import Sreemangal from "./components/Map/Sreemangal";
 import Sundarban from "./components/Map/Sundarban";
 import News from "./components/News/News";
+import NotFound from "./components/NotFound/NotFound";
 import Slider from "./components/Slider/Slider";
 const App = () => {
   return (
@@ -39,6 +40,9 @@ const App = () => {
           </Route>
           <Route path="/about">
             <About></About>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </AuthProvider>
