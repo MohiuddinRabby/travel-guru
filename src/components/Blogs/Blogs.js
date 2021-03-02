@@ -13,7 +13,7 @@ const Blogs = () => {
   }, []);
   return (
     <div className="container text-danger">
-      <h3 className="text-info">Blogs</h3>
+      <h3 className="">Blogs</h3>
       <hr />
       {blogs.map((blog) => (
         <BlogsInfo key={blog.id} blog={blog}></BlogsInfo>

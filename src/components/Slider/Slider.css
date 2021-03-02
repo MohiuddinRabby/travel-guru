@@ -6,7 +6,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -26,15 +26,9 @@
   -webkit-transform: scale(0.92);
   transform: scale(0.92); */
 }
-#home {
-  background: url("../../assets/img/bg1.jpg");
-  min-height: 568px;
-  background-size: cover;
-}
+
 #home .dark-overlay {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 568px;
-  background-color: rgba(0, 0, 0, 0.6);
 }

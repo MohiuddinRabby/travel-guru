@@ -2,8 +2,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container py-5">
-      <h4 className="text-info">
+    <div className="container py-5 text-danger">
+      <h4 className="">
         Travel-guru is a practise app for traveling and booking hotels.
       </h4>
       <h5 className="text-danger">
@@ -12,7 +12,7 @@ const About = () => {
           href="https://mohiuddin.netlify.app/"
           rel="noopener noreferrer"
           target="_blank"
-          className="text-info"
+          className=""
         >
           Mohiuddin
         </a>{" "}
@@ -30,7 +30,7 @@ const About = () => {
         href="https://github.com/MohiuddinRabby/travel-guru"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-info"
+        className="text-danger"
       >
         Visit the repo <i className="fab fa-github fa-2x"></i>
       </a>

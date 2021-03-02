@@ -1,13 +1,13 @@
-#booking-section {
+/* #booking-section {
   background: url("../../assets/img/bg2.jpg");
-  min-height: 568px;
+  min-height: 100%;
   background-size: cover;
-}
-#booking-section .booking-darkOverlay {
+} */
+/* #booking-section .booking-darkOverlay {
   top: 0;
   left: 0;
   width: 100%;
   min-height: 568px;
   background-color: rgba(0, 0, 0, 0.6);
-}
+} */
 
